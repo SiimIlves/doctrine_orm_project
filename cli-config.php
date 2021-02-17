@@ -1,8 +1,8 @@
 <?php
 
-$entitymanager = \App\Service\Databasefactory::create();
-
 require_once('vendor/autoload.php');
 
+$entityManager = \App\Service\DatabaseFactory::create();
+
 return \Doctrine\ORM\Tools\Console\ConsoleRunner::createHelperSet(
-$entitymanager);
+	$entityManager);
