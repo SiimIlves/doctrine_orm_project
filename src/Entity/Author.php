@@ -1,51 +1,59 @@
 <?php
+
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 
 /**
-* @Entity
-*/
-class Author {
-	/**
-	* @Column(type="integer")
-	* @Id
-	* @GeneratedValue
-	*/
-	private $id;
-	
-	/**
-	* @Column(type="string")
-	*/
-	private $name;
+ * @Entity
+ */
+class Author
+{
+    /**
+     * @Column(type="integer")
+     * @Id
+     * @GeneratedValue
+     */
+    private $id;
 
-	/**
-	* @OneToMany(targetEntity="Article", mappedBy="author")
-	* @OrderBy({"published" = "DESC"})
-	*/
-	private $articles;
+    /**
+     * @Column(type="string")
+     */
+    private $name;
 
-	public function __construct(){
-		$this->articles = new ArrayCollection;
-	}
+    /**
+     * @OneToMany(targetEntity="Article", mappedBy="author")
+     * @OrderBy({"publiched" = "DESC"})
+     */
+    private $articles;
 
-	public function getId(){
-		return $this->id;
-	}
+    public function __construct()
+    {
+        $this->articles = new ArrayCollection;
+    }
 
-	public function setId($value){
-		$this->id = $value;
-	}
+    public function getId()
+    {
+        return $this->id;
+    }
 
-	public function getName(){
-		return $this->name;
-	}
+    public function setId($value)
+    {
+        $this->id = $value;
+    }
 
-	public function setName($value){
-		$this->name = $value;
-	}
+    public function getName()
+    {
+        return $this->name;
+    }
 
-	public function getArticles(){
-		return $this->articles;
-	}
+    public function setName($value)
+    {
+        $this->name = $value;
+    }
+
+    public function getArticles()
+    {
+        return $this->articles;
+    }
 }
