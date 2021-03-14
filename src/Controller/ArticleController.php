@@ -10,6 +10,23 @@ class ArticleController extends Controller
 {
     public function view(Request $request, Response $response, $args = [])
     {
+        $article = $this->ci->get('db')->getRepository('App\Entity\Article')->findOneBy([
+                'slug' => $args['slug']
+        ]);
+        
+
+        if(!$article){
+            throw new HttpNotFoundException($request);
+        }
+
+        return $this->renderPage($response, 'article.html', [
+            'article' => $article,
+            'tags' => $article->getTags()
+        ]);
+    }
+
+    public function viewQB(Request $request, Response $response, $args = [])
+    {
     	$qb = $this->ci->get('db')->createQueryBuilder();
 
     	$qb->select('a')
