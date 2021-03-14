@@ -76,7 +76,7 @@ class Article {
 	}
 
 	public function getPublished(){
-		return $this->published;
+		return $this->publiched;
 	}
 
 	public function setPublish(DateTime $value = null){
