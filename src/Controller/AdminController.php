@@ -16,6 +16,8 @@ class AdminController extends Controller
             'publiched' => 'DESC'
         ]);
 
+        
+
         return $this->renderPage($response, 'admin/view.html', [
             'articles' => $articles
         ]);
