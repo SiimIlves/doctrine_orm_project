@@ -1,21 +1,21 @@
 {{%FILTERS}}
 
-<h1>Manage articles</h1>
+<h1>Tags</h1>
 
 <table>
     <thead>
         <tr>
             <th>Name</th>
-            <th>Published</th>
+
         </tr>
     </thead>
     <tbody>
-    {{#articles}}
+    {{#tags}}
         <tr>
             <td><a href="/admin/tags/{{getId}}">{{getName}}</a></td>
-            <td>{{getPublished | date}}</td>
+
         </tr>
-    {{/articles}}
+    {{/tags}}
     </tbody>
 </table>
 

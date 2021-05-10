@@ -13,7 +13,7 @@ class ArticleAdminController extends Controller
     public function view(Request $request, Response $response)
     {
         $articles = $this->ci->get('db')->getRepository('App\Entity\Article')->findBy([], [
-            'publiched' => 'DESC'
+            'published' => 'DESC'
         ]);
 
         

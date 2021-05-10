@@ -34,7 +34,7 @@ class Article {
 	/**
 	* @Column(type="datetime")
 	*/
-	private $publiched;
+	private $published;
 
 	/**
 	* @ManyToOne(targetEntity="Author", inversedBy="articles")
@@ -93,11 +93,11 @@ class Article {
 	}
 
 	public function getPublished(){
-		return $this->publiched;
+		return $this->published;
 	}
 
 	public function setPublish(DateTime $value = null){
-		$this->publiched = $value;
+		$this->published = $value;
 	}
 
 	public function getAuthor(){
